@@ -25,6 +25,10 @@ services:
       - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
+networks:
+  nginx-proxy:
+    name: nginx-proxy
+
 volumes:
   conf:
   vhost:
