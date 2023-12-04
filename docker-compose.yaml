@@ -12,6 +12,8 @@ services:
       - html:/usr/share/nginx/html
       - certs:/etc/nginx/certs:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - nginx-proxy
   acme-companion:
     container_name: nginx-proxy-acme
     image: nginxproxy/acme-companion
@@ -24,9 +26,12 @@ services:
       - certs:/etc/nginx/certs:rw
       - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - nginx-proxy
 
 networks:
   nginx-proxy:
+    driver: bridge
     name: nginx-proxy
 
 volumes:
