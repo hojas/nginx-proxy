@@ -1,6 +1,6 @@
 # nginx-proxy
 
-Run nginx-proxy in a container easily.
+Run nginx-proxy with SSL by one click.
 
 ## Usage
 
